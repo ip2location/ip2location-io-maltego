@@ -19,6 +19,10 @@ class IP2LocationGeolocation(DiscoverableTransform):
             georesult.addProperty("country", value = result['country_name'])
             georesult.addProperty("countrycode", value = result['country_code'])
             georesult.addProperty("city", value = result['city_name'])
+            if 'district' in result:
+                georesult.addProperty("District", value = str(result['district']))
+            if 'area_code' in result:
+                georesult.addProperty("Area Code", value = str(result['area_code']))
             georesult.addProperty("latitude", value = result['latitude'])
             georesult.addProperty("longitude", value = result['longitude'])
             georesult.addProperty("Zipcode", value = result['zip_code'])
@@ -26,6 +30,22 @@ class IP2LocationGeolocation(DiscoverableTransform):
             georesult.addProperty("ASN", value = result['asn'])
             georesult.addProperty("AS", value = result['as'])
             georesult.addProperty("Is Proxy", value = str(result['is_proxy']))
+            if 'isp' in result:
+                georesult.addProperty("ISP", value = str(result['isp']))
+            if 'domain' in result:
+                georesult.addProperty("Domain", value = str(result['domain']))
+            if 'usage_type' in result:
+                georesult.addProperty("Usage Type", value = str(result['usage_type']))
+            if 'weather_station_code' in result:
+                georesult.addProperty("Weather Station Code", value = str(result['weather_station_code']))
+            if 'weather_station_name' in result:
+                georesult.addProperty("Weather Station Name", value = str(result['weather_station_name']))
+            if 'mcc' in result:
+                georesult.addProperty("MCC", value = str(result['mcc']))
+            if 'mnc' in result:
+                georesult.addProperty("MNC", value = str(result['mnc']))
+            if 'fraud_score' in result:
+                georesult.addProperty("Fraud Score", value = str(result['fraud_score']))
         else:
             response.addUIMessage("Unable to query the geolocation information for this IP.")
     
