@@ -11,7 +11,7 @@ registry = TransformRegistry(
 # The rest of these attributes are optional
 
 # metadata
-registry.version = "0.1"
+registry.version = "1.0"
 
 # global settings
 # from settings import ip2locationio_api_key_setting
